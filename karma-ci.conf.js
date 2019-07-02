@@ -6,12 +6,13 @@ module.exports = function (config) {
   baseConfig(config);
   // Override base config
   config.set({
+    hostname: "karma",
     browsers: ["RemoteChrome"],
     customLaunchers: {
       "RemoteChrome": {
         base: "WebDriver",
         config: {
-          hostname: "localhost",
+          hostname: "selenium",
           port: 4444
         },
         browserName: "chrome",
