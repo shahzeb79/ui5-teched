@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for model\formatter.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">model/</a> formatter.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.83% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.71% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.83% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>23/24</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">119×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">126×</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">sap.ui.define([
+	"sap/ui/core/format/NumberFormat"
+], function (NumberFormat) {
+	"use strict";
+&nbsp;
+	var mStatusState = {
+		"A": "Success",
+		"O": "Warning",
+		"D": "Error"
+	};
+&nbsp;
+	var formatter = {
+		/**
+		 * Formats the price
+		 * @param {string} sValue model price value
+		 * @return {string} formatted price
+		 */
+		price: function (sValue) {
+			var numberFormat = NumberFormat.getFloatInstance({
+				maxFractionDigits: 2,
+				minFractionDigits: 2,
+				groupingEnabled: true,
+				groupingSeparator: ".",
+				decimalSeparator: ","
+			});
+			return numberFormat.format(sValue);
+		},
+&nbsp;
+		/**
+		 * Sums up the price for all products in the cart
+		 * @param {object} oCartEntries current cart entries
+		 * @return {string} string with the total value
+		 */
+		totalPrice: function (oCartEntries) {
+			var oBundle = this.getResourceBundle(),
+				fTotalPrice = 0;
+&nbsp;
+			Object.keys(oCartEntries).forEach(function (sProductId) {
+				var oProduct = oCartEntries[sProductId];
+				fTotalPrice += parseFloat(oProduct.Price) * oProduct.Quantity;
+			});
+&nbsp;
+			return oBundle.getText("cartTotalPrice", [formatter.price(fTotalPrice)]);
+		},
+&nbsp;
+		/**
+		 * Returns the status text based on the product status
+		 * @param {string} sStatus product status
+		 * @return {string} the corresponding text if found or the original value
+		 */
+		statusText: function (sStatus) {
+			var oBundle = this.getResourceBundle();
+&nbsp;
+			var mStatusText = {
+				"A": oBundle.getText("statusA"),
+				"O": oBundle.getText("statusO"),
+				"D": oBundle.getText("statusD")
+			};
+&nbsp;
+			return mStatusText[sStatus] || sStatus;
+		},
+&nbsp;
+		/**
+		 * Returns the product state based on the status
+		 * @param {string} sStatus product status
+		 * @return {string} the state text
+		 */
+		statusState: function (sStatus) {
+			return mStatusState[sStatus] || "None";
+		},
+&nbsp;
+		/**
+		 * Returns the relative URL to a product picture
+		 * @param {string} sUrl image URL
+		 * @return {string} relative image URL
+		 */
+		pictureUrl: function (sUrl) {
+			if (sUrl){
+				return  sap.ui.require.toUrl(sUrl);
+			} else {
+				return undefined;
+			}
+		},
+&nbsp;
+		/**
+		 * Returns the footer text for the cart based on the amount of products
+		 * @param {object} oSavedForLaterEntries the entries in the cart
+		 * @return {string} "" for no products, the i18n text for &gt;0 products
+		 */
+		footerTextForCart: function (oSavedForLaterEntries) {
+			var oBundle = this.getResourceBundle();
+&nbsp;
+			<span class="missing-if-branch" title="else path not taken" >E</span>if (Object.keys(oSavedForLaterEntries).length === 0) {
+				return "";
+			}
+<span class="cstat-no" title="statement not covered" >			return oBundle.getText("cartSavedForLaterFooterText");</span>
+		},
+&nbsp;
+		/**
+		 * Checks if one of the collections contains items.
+		 * @param {object} oCollection1 First array or object to check
+		 * @param {object} oCollection2 Second array or object to check
+		 * @return {boolean} true if one of the collections is not empty, otherwise - false.
+		 */
+		hasItems: function (oCollection1, oCollection2) {
+			var bCollection1Filled = !!(oCollection1 &amp;&amp; Object.keys(oCollection1).length),
+				bCollection2Filled = !!(oCollection2 &amp;&amp; Object.keys(oCollection2).length);
+&nbsp;
+			return bCollection1Filled || <span class="branch-1 cbranch-no" title="branch not covered" >bCollection2Filled;</span>
+		}
+	};
+&nbsp;
+	return formatter;
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jul 02 2019 12:39:15 GMT+0200 (Central European Summer Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
