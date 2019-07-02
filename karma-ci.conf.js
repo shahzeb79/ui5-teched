@@ -6,7 +6,7 @@ module.exports = function (config) {
   baseConfig(config);
   // Override base config
   config.set({
-    hostname: "karma",
+    hostname: "elated_jepsen",
     browsers: ["RemoteChrome"],
     customLaunchers: {
       "RemoteChrome": {
