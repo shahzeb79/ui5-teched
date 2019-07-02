@@ -7,16 +7,16 @@ module.exports = function (config) {
   // Override base config
   config.set({
     browsers: ["RemoteChrome"],
-    hostname: "objective_sammet",
+    hostname: "karma",
     customLaunchers: {
       "RemoteChrome": {
         base: "WebDriver",
         config: {
-          hostname: "elated_jepsen",
+          hostname: "selenium",
           port: 4444
         },
         browserName: "chrome",
-        name: "objective_sammet",
+        name: "karma",
         pseudoActivityInterval: 30000
       }
     }
