@@ -11,7 +11,7 @@ module.exports = function (config) {
       "RemoteChrome": {
         base: "WebDriver",
         config: {
-          hostname: "localhost",
+          hostname: "cloudl000024.wdf.sap.corp",
           port: 4444
         },
         browserName: "chrome",
