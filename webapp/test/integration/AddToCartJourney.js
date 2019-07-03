@@ -14,7 +14,7 @@ sap.ui.define([
 	opaTest("Should see the category list", function (Given, When, Then) {
 		// Arrangements
 		Given.iStartMyApp();
-
+		sap.ui.test.Opa5.assert.strictEqual(sap.ui.test.Opa5.getWindow().visualViewport, {"a": 1});       
 		// Assertions
 		Then.onTheHomePage.iShouldSeeTheCategoryList();
 		
