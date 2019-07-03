@@ -12,7 +12,7 @@ module.exports = function (config) {
       "RemoteChrome": {
         base: "WebDriver",
         config: {
-          hostname: "selenium",
+          hostname: "cqc-caa380_selenium_1",
           port: 4444
         },
         browserName: "chrome",
