@@ -6,18 +6,16 @@ module.exports = function (config) {
   baseConfig(config);
   // Override base config
   config.set({
-    browsers: ["IE7"],
+    browsers: ["Firefox"],
     hostname: "karma",
     customLaunchers: {
-      "IE7": {
+      "Firefox": {
         base: "WebDriver",
         config: {
           hostname: "selenium",
           port: 4444
         },
-        browserName: 'internet explorer',
-        version: '10',
-        'x-ua-compatible': 'IE=EmulateIE7',
+        browserName: 'firefox',
         name: "karma",
         pseudoActivityInterval: 60000
       }
