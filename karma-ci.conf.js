@@ -11,6 +11,7 @@ module.exports = function (config) {
     customLaunchers: {
       "RemoteChrome": {
         base: "WebDriver",
+        flags: ['--no-sandbox'],
         config: {
           hostname: "172.31.0.2",
           port: 4444
