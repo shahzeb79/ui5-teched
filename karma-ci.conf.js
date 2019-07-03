@@ -6,16 +6,19 @@ module.exports = function (config) {
   baseConfig(config);
   // Override base config
   config.set({
-    browsers: ["RemoteChrome"],
+    browsers: ["IE7"],
     hostname: "karma",
     customLaunchers: {
-      "RemoteChrome": {
+      "IE7": {
         base: "WebDriver",
         config: {
           hostname: "selenium",
           port: 4444
         },
-        browserName: "chrome",
+        browserName: 'internet explorer',
+        platform: 'Windows XP',
+        version: '10',
+        'x-ua-compatible': 'IE=EmulateIE7',
         name: "karma",
         pseudoActivityInterval: 60000
       }
