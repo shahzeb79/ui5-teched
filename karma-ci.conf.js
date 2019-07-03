@@ -18,7 +18,7 @@ module.exports = function (config) {
         },
         browserName: "chrome",
         name: "karma",
-        pseudoActivityInterval: 30000
+        pseudoActivityInterval: 60000
       }
     }
   });
