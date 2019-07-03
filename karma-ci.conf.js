@@ -11,7 +11,7 @@ module.exports = function (config) {
     customLaunchers: {
       "RemoteChrome": {
         base: "WebDriver",
-        flags: ['--screenshot'],
+        flags: ['--screenshot --window-size=1280,1696'],
         config: {
           hostname: "selenium",
           port: 4444
