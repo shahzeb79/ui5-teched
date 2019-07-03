@@ -9,6 +9,6 @@ sap.ui.define([
 		arrangements: new Startup(),
 		viewNamespace: "sap.ui.demo.cart.view.",
 		autoWait: true,
-		timeout: 30
+		timeout: 15
 	});
 });
