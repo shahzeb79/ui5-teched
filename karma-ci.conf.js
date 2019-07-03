@@ -7,11 +7,9 @@ module.exports = function (config) {
   // Override base config
   config.set({
     browsers: ["RemoteChrome"],
-    hostname: "karma",
     customLaunchers: {
       "RemoteChrome": {
         base: "WebDriver",
-        flags: ['--start-maximized'],
         config: {
           hostname: "localhost",
           port: 4444
