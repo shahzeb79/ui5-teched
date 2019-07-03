@@ -1,0 +1,11 @@
+general:
+  artifactType: 'npm'
+  buildTool: 'npm'
+  projectVersion: 0.0.1
+  cfOrg: ''
+  gitSshKeyCredentialsId: ''
+steps:
+  sendNotificationMail:
+    notificationRecipients: ''
+  writeInflux:
+    influxServer: jenkins
