@@ -13,7 +13,7 @@ module.exports = function (config) {
         base: "WebDriver",
         flags: ['--start-maximized'],
         config: {
-          hostname: "selenium",
+          hostname: "localhost",
           port: 4444
         },
         browserName: "chrome",
