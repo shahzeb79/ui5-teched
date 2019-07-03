@@ -16,7 +16,6 @@ module.exports = function (config) {
           port: 4444
         },
         browserName: 'internet explorer',
-        platform: 'Windows XP',
         version: '10',
         'x-ua-compatible': 'IE=EmulateIE7',
         name: "karma",
