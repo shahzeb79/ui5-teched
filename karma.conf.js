@@ -20,12 +20,13 @@ module.exports = function (config) {
       ]
     },
     client: {			
-			qunit: {
-				showUI: true
-			}
+	qunit: {
+	   showUI: true
+	}
     },
     browsers: ["ChromeCustomHeadless"],
     singleRun: true,
+    logLevel: config.LOG_DEBUG,
     customLaunchers: {
       ChromeCustom: {
         base: 'Chrome',
