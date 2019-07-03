@@ -11,6 +11,7 @@ module.exports = function (config) {
     customLaunchers: {
       "RemoteChrome": {
         base: "WebDriver",
+        flags: ['--window-size=1600,900'],
         config: {
           hostname: "selenium",
           port: 4444
