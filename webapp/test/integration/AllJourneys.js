@@ -8,6 +8,7 @@ sap.ui.define([
 	Opa5.extendConfig({
 		arrangements: new Startup(),
 		viewNamespace: "sap.ui.demo.cart.view.",
-		autoWait: true
+		autoWait: true,
+		timeout: 30
 	});
 });
