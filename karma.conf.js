@@ -25,6 +25,7 @@ module.exports = function (config) {
 			}
     },
     browsers: ["ChromeCustomHeadless"],
+    singleRun: true,
     customLaunchers: {
       ChromeCustom: {
         base: 'Chrome',
