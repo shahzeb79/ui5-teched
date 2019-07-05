@@ -11,7 +11,7 @@ module.exports = function (config) {
     customLaunchers: {
       "RemoteChrome": {
         base: "WebDriver",
-        flags: ['--start-maximized'],
+        flags: ['--disable-translate', '--disable-extensions', '--remote-debugging-port=9223', '--start-maximized'] 
         config: {
           hostname: "selenium",
           port: 4444
