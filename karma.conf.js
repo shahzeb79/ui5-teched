@@ -26,7 +26,7 @@ module.exports = function (config) {
     },
     browsers: ["ChromeCustomHeadless"],
     singleRun: true,
-    logLevel: config.LOG_DEBUG,
+    logLevel: config.LOG_INFO,
     customLaunchers: {
       ChromeCustom: {
         base: 'Chrome',
