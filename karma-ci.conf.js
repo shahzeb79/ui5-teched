@@ -12,7 +12,7 @@ module.exports = function (config) {
       "RemoteChrome": {
         base: "WebDriver",
         "goog:chromeOptions": {
-          args: ["--start-maximized"]
+          args: ["--window-size=1920,1080"]
         },
         config: {
           hostname: "selenium",
