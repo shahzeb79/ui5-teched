@@ -7,12 +7,12 @@ node {
       // Get some code from a GitHub repository
       git 'https://github.com/shahzeb79/ui5-teched.git'
       karmaExecuteTests script: this, failOnError: false
-      
-      // Get the Maven tool.
-      // ** NOTE: This 'M3' Maven tool must be configured
-      // **       in the global configuration.           
+      testsPublishResults(
+                        script: this,
+                        junit: [pattern: 'target/karma/*/TEST*.xml', archive: true]
+                        )
    }
-   stage('Results') {
+   stage('Istanbul Results') {
       publishHTML target: [
                                     allowMissing: true,
                                     keepAll: true,
@@ -21,11 +21,5 @@ node {
                                     reportName: "OPA Report"
                     ]
 
-   }
-   stage('Results') {
-     testsPublishResults(
-                        script: this,
-                        junit: [pattern: 'target/karma/*/TEST*.xml', archive: true]
-                    )
    }
 }
