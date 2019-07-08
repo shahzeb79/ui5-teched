@@ -1,54 +1,31 @@
 #!/usr/bin/env groovy
-@Library(['piper-lib', 'piper-lib-os']) _
+@Library(['piper-lib-os']) _
 
-try {
- if (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
-        stage('Checkout') {
-            node {
-                deleteDir()
-                checkout scm
-                setupPipelineEnvironment script: this, storeGitHubStatistics: false
-                measureDuration(script: this, measurementName: 'build_duration') {
-                   stash name: 'master'
-                }
-            }
-        }
-        
-        
-        // OPA5 tests integration to stage in the pipeline after local build
-        stage('Execute OPA tests') {
-            node {
-                deleteDir()
-                measureDuration(script: this, measurementName: 'OPA_test_duration') {
-                    unstash 'master'
-                    karmaExecuteTests script: this
-                   
-                }
-            }
-        }
+node {
+   def mvnHome
+   stage('Preparation') { // for display purposes
+      // Get some code from a GitHub repository
+      git 'https://github.com/shahzeb79/ui5-teched.git'
+      karmaExecuteTests script: this, failOnError: false
+      
+      // Get the Maven tool.
+      // ** NOTE: This 'M3' Maven tool must be configured
+      // **       in the global configuration.           
+   }
+   stage('Results') {
+      publishHTML target: [
+                                    allowMissing: true,
+                                    keepAll: true,
+                                    reportDir: 'coverage/Chrome 75.0.3770 (Linux 0.0.0)/',
+                                    reportFiles: 'index.html',
+                                    reportName: "OPA Report"
+                    ]
 
-        
-        // UIVeri5 tests integration to stage in the pipeline post OPA Tests
-        stage('Execute Uiver5 tests') {
-            node {
-                deleteDir()
-                measureDuration(script: this, measurementName: 'uiveri5_test_duration') {
-
-                }
-            }
-        }
-    }
-    
-} 
-// Retrieve all errors which are thrown as an exception
-
-catch (Throwable err) { // catch all exceptions
-    globalPipelineEnvironment.addError(this, err)
-    throw err
-} finally {
-    if (env.BRANCH_NAME.startsWith('PR') || env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
-        node{
-            writeInflux script: this
-        }
-    }
+   }
+   stage('Results') {
+     testsPublishResults(
+                        script: this,
+                        junit: [pattern: 'target/karma/*/TEST*.xml', archive: true]
+                    )
+   }
 }
