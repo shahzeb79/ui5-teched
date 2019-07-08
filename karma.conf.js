@@ -56,6 +56,12 @@ module.exports = function (config) {
 				}
       ]			
 		},
-    reporters : [ 'progress', 'coverage' ]
+	  junitReporter: {
+			outputDir: "./target/karma",
+			outputFile: "TEST-qunit.xml",
+			suite: "",
+			useBrowserName: true
+		  },
+    reporters : [ 'progress', 'coverage', 'junit' ]
   });
 };
